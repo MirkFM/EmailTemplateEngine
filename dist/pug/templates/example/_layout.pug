@@ -1,0 +1,39 @@
+extends ../../layout/_base
+
+mixin block_1x1(el)
+    +table('100%')
+        tr
+            +td('280')
+                +image(el.imgWidth, el.imgHeight, el.imgUrl, el.bgColor)
+            +space('20')
+            +td()(align="left")
+                +space('10', 'table')
+                +p()!= el.text
+                +button('180', '36', el.url) More
+    +space('10', 'table')
+    +hr('#bbc7ce')
+    +space('10', 'table')
+
+mixin block_2x1(el_1, el_2)
+    +table()
+        tr
+            +td('280')
+                +table('100%')
+                    tr: td
+                        +image(el_1.imgWidth, el_1.imgHeight, el_1.imgUrl, el_1.bgColor)
+                        +space('10', 'table')
+                    tr: td
+                        +p()(align="left")!= el_1.text
+                    tr: td
+                        +button('180', '36', el_1.url, '#333', '#fff', '#333') More
+            +space('40')
+            +td('280')
+                +table('100%')
+                    tr: td
+                        +image(el_2.imgWidth, el_2.imgHeight, el_2.imgUrl, el_2.bgColor)
+                        +space('10', 'table')
+                    tr: td
+                        +p()(align="left")!= el_2.text
+                    tr: td
+                        +button('180', '36', el_2.url, '#333', '#fff', '#333') More
+    +space('40', 'table')
